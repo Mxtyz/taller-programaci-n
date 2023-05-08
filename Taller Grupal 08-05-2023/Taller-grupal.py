@@ -8,7 +8,6 @@ class Objeto:
         self.valor2 = valor2
     
     def calcular_valor(self):
-        # Calcula el valor a comparar a partir de los atributos del objeto
         return self.valor1 * self.valor2
 
 class IngresoDatosDialog(QDialog):
