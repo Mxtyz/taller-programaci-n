@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QHBoxLayout,
 class Interfaz(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("!!Bienvenido!!")
+        self.setWindowTitle("Bienvenido")
         self.setGeometry(100, 100, 800, 400)
         
         layout = QHBoxLayout()
@@ -14,7 +14,7 @@ class Interfaz(QMainWindow):
         
         left_layout = QVBoxLayout()
         
-        username_label = QLabel("Nombre del usuario:")
+        username_label = QLabel("Nombre de usuario:")
         left_layout.addWidget(username_label)
         
         username_input = QLineEdit()
@@ -30,27 +30,28 @@ class Interfaz(QMainWindow):
         left_layout.addWidget(description_text)
         
         layout.addLayout(left_layout)
-
+        
         right_layout = QVBoxLayout()
         
         atributos = ["Atributo 1:", "Atributo 2:", "Atributo 3:", "Atributo 4:", "Atributo 5:", "Atributo 6:"]
         valores = ["Valor 1", "Valor 2", "Valor 3", "Valor 4", "Valor 5", "Valor 6"]
         
-        for attribute, value in zip(atributos, valores):
+        for attribute, values in zip(atributos, valores):
             attribute_label = QLabel(attribute)
             right_layout.addWidget(attribute_label)
             
-            value_label = QLabel(value)
-            right_layout.addWidget(value_label)
+            value_input = QLineEdit()
+            right_layout.addWidget(value_input)
         
         layout.addLayout(right_layout)
         
         button = QPushButton("Aceptar")
         layout.addWidget(button)
-
+        
         button.clicked.connect(self.on_button_clicked)
     
     def on_button_clicked(self):
+        
         print("¡Botón clickeado!")
 
 
